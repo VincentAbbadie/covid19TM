@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th scope="col">Circuit</th>
+        <th scope="col">Mappeur</th>
+        <th scope="col">Champion</th>
+        <th scope="col">Meilleur temps</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let circuit of circuits">
+            <td>{{circuit.nom}}</td>
+            <td>{{circuit.mappeur}}</td>
+            <td>Champ</td>
+            <td>Time</td>
+        </tr>
+    </tbody>
+</table>
