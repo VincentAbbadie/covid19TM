@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nom": "tim0w",
+        "meilleurTemps": [
+            {
+                "circuitId": 1,
+                "temps": "3566"
+            },
+            {
+                "circuitId": 2,
+                "temps": "0588"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nom": "raphylegood",
+        "meilleurTemps": [
+            {
+                "circuitId": 1,
+                "temps": "3792"
+            },
+            {
+                "circuitId": 2,
+                "temps": "0587"
+            }
+        ]
+    }
+]

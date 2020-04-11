@@ -1,0 +1,18 @@
+<div *ngIf="circuit">
+    <h1>{{circuit.nom}}</h1>
+    Mappeur : <h3>{{circuit.mappeur}}</h3>
+    <table class="table">
+        <thead>
+            <th scope="col">Position</th>
+            <th scope="col">Joueur</th>
+            <th scope="col">Temps</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let joueur of joueurs">
+                <td>{{joueur.index}}</td>
+                <td>{{joueur.nom}}</td>
+                <td>{{joueur.temps}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

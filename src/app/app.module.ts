@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CenterComponent } from './center/center.component';
+import { CircuitComponent } from './circuit/circuit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CenterComponent
+    CenterComponent,
+    CircuitComponent
   ],
   imports: [
     BrowserModule,
