@@ -2,11 +2,35 @@
     {
         "id": 1,
         "nom": "Parking Indigo",
-        "mappeur": "lebz8"
+        "mappeur": "lebz8",
+        "podium": [
+            {
+                "position": 1,
+                "joueur": "tim0w",
+                "temps": "3566"
+            },
+            {
+                "position": 2,
+                "joueur": "raphylegood",
+                "temps": "3792"
+            }
+        ]
     },
     {
         "id": 2,
         "nom": "A04-Acrobatic",
-        "mappeur": "Nadeo"
+        "mappeur": "Nadeo",
+        "podium": [
+            {
+                "position": 1,
+                "joueur": "raphylegood",
+                "temps": "0587"
+            },
+            {
+                "position": 2,
+                "joueur": "tim0w",
+                "temps": "0588"
+            }
+        ]
     }
 ]

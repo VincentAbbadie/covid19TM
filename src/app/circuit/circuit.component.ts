@@ -27,7 +27,7 @@ export class CircuitComponent implements OnInit {
           joueur => {
             joueur.meilleurTemps.forEach(
               meilleurTemps => {
-                if (meilleurTemps.circuitId == this.circuit.id) {
+                if (meilleurTemps.circuitNom == this.circuit.nom) {
                   joueur.temps = meilleurTemps.temps;
                   this.circuit.joueurs.push(joueur);
                 }

@@ -8,8 +8,8 @@
             <th scope="col">Temps</th>
         </thead>
         <tbody>
-            <tr *ngFor="let joueur of joueurs">
-                <td>{{joueur.index}}</td>
+            <tr *ngFor="let joueur of circuit.joueurs; let i = index">
+                <td>{{i+1}}</td>
                 <td>{{joueur.nom}}</td>
                 <td>{{joueur.temps}}</td>
             </tr>
