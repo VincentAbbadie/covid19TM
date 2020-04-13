@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CircuitService } from '../services/circuit.service';
-import { Circuit, Podium } from '../models/circuit';
+import { Circuit, Podium } from '../models/model';
 
 @Component({
   selector: 'app-circuit',
@@ -10,7 +10,7 @@ import { Circuit, Podium } from '../models/circuit';
 export class CircuitComponent implements OnInit {
 
   circuits: Circuit[];
-  selectedCircuit: Circuit;
+  selectedCircuit: Circuit = new Circuit();
 
   constructor(private circuitService: CircuitService) { }
 

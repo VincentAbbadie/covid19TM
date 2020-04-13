@@ -1,4 +1,8 @@
-import { Joueur } from './joueur';
+export class Joueur {
+    id: number;
+    nom: string;
+    podiums: Podium[];
+}
 
 export class Circuit {
     nom: string;
@@ -13,4 +17,5 @@ export class Podium {
     position: number;
     joueur: string;
     temps: string;
+    circuit: string;
 }

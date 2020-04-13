@@ -1,1 +1,48 @@
-<p>joueur works!</p>
+<div class="fluid-container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <mat-card>
+                <mat-card-title><u>Liste des joueurs</u></mat-card-title>
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Joueur</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let joueur of joueurs">
+                                <td><button type="button" class="btn btn-light"
+                                        (click)="selectJoueur(joueur)">{{joueur.nom}}</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-auto">
+            <div *ngIf="selectedJoueur">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{selectedJoueur.nom}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <table class="table">
+                            <thead>
+                                <th scope="col">Circuit</th>
+                                <th scope="col">Position</th>
+                                <th scope="col">Temps</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let podium of selectedJoueur.podiums;">
+                                    <td>{{podium.circuit}}</td>
+                                    <td>{{podium.position}}</td>
+                                    <td>{{podium.temps}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
