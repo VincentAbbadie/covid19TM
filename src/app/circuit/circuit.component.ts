@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Circuit } from '../models/circuit';
 import { CircuitService } from '../services/circuit.service';
-import { JoueurService } from '../services/joueur.service';
-import { Joueur } from '../models/joueur';
+import { Circuit, Podium } from '../models/circuit';
 
 @Component({
   selector: 'app-circuit',
@@ -11,43 +9,33 @@ import { Joueur } from '../models/joueur';
 })
 export class CircuitComponent implements OnInit {
 
-  circuit: Circuit = null;
-  joueurs: Joueur[];
+  circuits: Circuit[];
+  selectedCircuit: Circuit;
 
-  constructor(private circuitService: CircuitService, private joueurService: JoueurService) { }
+  constructor(private circuitService: CircuitService) { }
 
   ngOnInit() {
-    this.circuitService.getSelectedCircuit().subscribe(
+    this.circuitService.getCircuits().subscribe(
       data => {
-        this.circuit = data;
-        this.circuit.joueurs = [];
+        this.circuits = data;
 
-        // retrieve all joueur meilleur temps on this circuit
-        this.joueurs.forEach(
-          joueur => {
-            joueur.meilleurTemps.forEach(
-              meilleurTemps => {
-                if (meilleurTemps.circuitNom == this.circuit.nom) {
-                  joueur.temps = meilleurTemps.temps;
-                  this.circuit.joueurs.push(joueur);
-                }
+        this.circuits.forEach(
+          circuit => {
+            let podium: Podium = circuit.podium.find(
+              p => {
+                return p.position == 1;
               }
             );
+            circuit.meilleurJoueur = podium.joueur;
+            circuit.meilleurTemps = podium.temps;
           }
         );
+      }
+    );
+  }
 
-        this.circuit.joueurs.sort(
-          (a, b) => {
-            return a.temps < b.temps ? -1 : 1;
-          }
-        );
-      }
-    );
-    this.joueurService.getJoueurs().subscribe(
-      data => {
-        this.joueurs = data;
-      }
-    );
+  selectCircuit(circuit: Circuit): void {
+    this.selectedCircuit = circuit;
   }
 
 }

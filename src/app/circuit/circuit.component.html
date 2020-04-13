@@ -1,18 +1,56 @@
-<div *ngIf="circuit">
-    <h1>{{circuit.nom}}</h1>
-    Mappeur : <h3>{{circuit.mappeur}}</h3>
-    <table class="table">
-        <thead>
-            <th scope="col">Position</th>
-            <th scope="col">Joueur</th>
-            <th scope="col">Temps</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let joueur of circuit.joueurs; let i = index">
-                <td>{{i+1}}</td>
-                <td>{{joueur.nom}}</td>
-                <td>{{joueur.temps}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="fluid-container mt-4">
+    <div class="row">
+        <div class="col-5">
+            <mat-card>
+                <mat-card-title><u>Liste des circuits</u></mat-card-title>
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Circuit</th>
+                            <th scope="col">Mappeur</th>
+                            <th scope="col">Champion</th>
+                            <th scope="col">Meilleur temps</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let circuit of circuits">
+                                <td><button type="button" class="btn btn-light"
+                                        (click)="selectCircuit(circuit)">{{circuit.nom}}</button>
+                                </td>
+                                <td>{{circuit.mappeur}}</td>
+                                <td>{{circuit.meilleurJoueur}}</td>
+                                <td>{{circuit.meilleurTemps}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-7">
+            <div *ngIf="selectedCircuit">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{selectedCircuit.nom}}</mat-card-title>
+                        <mat-card-subtitle>Mappeur : <h4>{{selectedCircuit.mappeur}}</h4>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <table class="table">
+                            <thead>
+                                <th scope="col">Position</th>
+                                <th scope="col">Joueur</th>
+                                <th scope="col">Temps</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let podium of selectedCircuit.podium;">
+                                    <td>{{podium.position}}</td>
+                                    <td>{{podium.joueur}}</td>
+                                    <td>{{podium.temps}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
 </div>

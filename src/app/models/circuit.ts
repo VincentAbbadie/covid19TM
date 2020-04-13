@@ -5,10 +5,12 @@ export class Circuit {
     mappeur: string;
     id: number;
     podium: Podium[];
+    meilleurJoueur: string;
+    meilleurTemps: string;
 }
 
 export class Podium {
     position: number;
-    joueur: Joueur;
+    joueur: string;
     temps: string;
 }

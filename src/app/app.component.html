@@ -1,11 +1,18 @@
-<app-header></app-header>
-<div class="fluid-container">
-    <div class="row">
-        <div class="col-4">
-            <app-center></app-center>
-        </div>
-        <div class="col-8">
-            <app-circuit></app-circuit>
-        </div>
-    </div>
+<div class="shadow mb-2 mt-2">
+    <app-header></app-header>
+</div>
+<div>
+    <mat-tab-group>
+        <mat-tab label="Circuit">
+            <div class="ml-4 mr-4">
+                <app-circuit></app-circuit>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Joueur">
+            <div class="ml-4 mr-4">
+                <app-joueur></app-joueur>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
